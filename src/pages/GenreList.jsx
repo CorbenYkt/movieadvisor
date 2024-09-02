@@ -33,7 +33,7 @@ const GerneList = ({ movieid }) => {
                 <p>Error: {error}</p>
             ) : (
                 genres.map((genre, i) => (
-                    <span key={genre.id}>
+                    <span key={genre.id} className='text-gray-500'>
                         {genre.name}
                         {i < genres.length - 1 && <span>,&nbsp;</span>}
                     </span>

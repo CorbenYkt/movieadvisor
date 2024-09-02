@@ -40,7 +40,6 @@ function Home() {
             </div>
 
             <div className="grow flex-col justify-center items-center">
-
                 {loading ? (
                     <Loading />
                 ) : error ? (

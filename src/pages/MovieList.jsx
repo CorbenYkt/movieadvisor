@@ -1,7 +1,7 @@
 import React from 'react';
 import MovieItem from './MovieItem';
-import Carousel from "react-multi-carousel";
-import "react-multi-carousel/lib/styles.css";
+import Carousel from 'react-multi-carousel';
+import 'react-multi-carousel/lib/styles.css';
 
 const responsive = {
     desktop: {
@@ -45,10 +45,9 @@ const MovieList = ({ data }) => {
             autoPlaySpeed={7000}
             keyBoardControl={true}
             customTransition="all .5"
-            transitionDuration={500}
+            transitionDuration={1000}
             containerClass="carousel-container"
             removeArrowOnDeviceType={["tablet", "mobile"]}
-
             dotListClass="custom-dot-list-style"
             itemClass="carousel-item-padding-40-px"
         >
