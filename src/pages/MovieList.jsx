@@ -41,7 +41,7 @@ const MovieList = ({ data }) => {
             responsive={responsive}
             ssr={true}
             infinite={true}
-            autoPlay={true}
+            autoPlay={false}
             autoPlaySpeed={7000}
             keyBoardControl={true}
             customTransition="all .5"
@@ -52,7 +52,7 @@ const MovieList = ({ data }) => {
             itemClass="carousel-item-padding-40-px"
         >
             {data.map((movie) =>
-                <div key={movie.id}>
+                <div key={movie.id} >
                     <MovieItem movie={movie} />
                 </div>
             )}

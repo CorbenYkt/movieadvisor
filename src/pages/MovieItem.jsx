@@ -12,7 +12,7 @@ const MovieItem = ({ movie }) => {
             <GerneList movieid={movie.id}></GerneList>
             {/* <div className='from-neutral-500 text-sm'>{genre}</div> */}
             <div>
-                <img src={'https://image.tmdb.org/t/p/w500' + movie.backdrop_path} className='h-32' />
+                <img src={'https://image.tmdb.org/t/p/w500' + movie.backdrop_path} className='w-full sm:w-1/2 md:w-full' />
             </div>
             <div className='flex flex-row text-gray-500'>
                 <div className='flex items-center'><CiCalendarDate />&nbsp;
@@ -21,7 +21,7 @@ const MovieItem = ({ movie }) => {
                     &nbsp;
                     {movie.vote_average}</div>
             </div>
-            <div className='text-justify'>{movie.overview}</div>
+            <div className='text-justify text-sm'>{movie.overview}</div>
         </div>
     );
 }; export default MovieItem;

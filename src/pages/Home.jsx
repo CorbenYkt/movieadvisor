@@ -39,7 +39,7 @@ function Home() {
                 <Header />
             </div>
 
-            <div className="grow flex-col justify-center items-center">
+            <div className="grow flex-col justify-center items-center ">
                 {loading ? (
                     <Loading />
                 ) : error ? (
@@ -47,10 +47,9 @@ function Home() {
                 ) : (
                     <MovieList data={data}></MovieList>
                 )}
-
             </div >
 
-            <div className="h-min">
+            <div className="">
                 <Footer />
             </div>
         </div >
