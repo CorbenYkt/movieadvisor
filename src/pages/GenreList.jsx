@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from 'react';
+import Loading from './Loading';
 
 const GerneList = ({ movieid }) => {
     const [genres, setGenres] = useState([]);
-
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
+    
     useEffect(() => {
         getDetailInfo();
     }, []);
@@ -15,29 +18,28 @@ const GerneList = ({ movieid }) => {
             }
             const result = await response.json();
             setGenres(result["genres"]);
-            console.log(result["genres"]);
+            //console.log(result["genres"]);
+            setLoading(false);
         } catch (error) {
             setError(error.message);
+            setLoading(false);
         }
     };
     return (
         <div className='flex flex-row'>
-            {
+            {loading ? (
+                <Loading />
+            ) : error ? (
+                <p>Error: {error}</p>
+            ) : (
                 genres.map((genre, i) => (
                     <span key={genre.id}>
                         {genre.name}
                         {i < genres.length - 1 && <span>,&nbsp;</span>}
                     </span>
                 ))
-            }
-
-
+            )}
         </div>
-        // genres.map((genre) =>
-        //     <div key={genres.id}>
-        //         <MovieItem movie={genre.name} />
-        //     </div>
-        // )
 
     );
 }; export default GerneList;

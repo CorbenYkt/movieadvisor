@@ -2,6 +2,7 @@ import React from 'react';
 import MovieItem from './MovieItem';
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
+
 const responsive = {
     desktop: {
         breakpoint: { max: 3000, min: 1024 },
@@ -19,7 +20,6 @@ const responsive = {
         slidesToSlide: 1 // optional, default to 1.
     }
 };
-
 
 const MovieList = ({ data }) => {
     function shuffle(array) {
