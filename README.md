@@ -1,8 +1,12 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Movie Advisor
 
-Currently, two official plugins are available:
+Do you want to watch some interesting and relevant movie this evening?
+Take a look at this site, which will give you its recommendations. In the near future, the ability to sub-categorize by genre, catalog in your personal account, etc. will be added...
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+
+![petsfriendlycafes](https://corbenykt.github.io/movieadvisor/Logo.png)
+
+Click to visit https://corbenykt.github.io/movieadvisor
+
+THNX to themoviedb.org portal for wonderfull API!
