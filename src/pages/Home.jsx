@@ -3,8 +3,10 @@ import Header from './Header';
 import Footer from './Footer';
 import MovieList from './MovieList';
 import Loading from './Loading';
+import axios from 'axios';
+import { googleLogout, useGoogleLogin } from '@react-oauth/google';
 
-function Home() {
+function Home({ user, profile, logOut, login }) {
     const [data, setData] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
@@ -36,7 +38,7 @@ function Home() {
     return (
         <div className="flex flex-col h-screen" >
             <div className="h-min" >
-                <Header />
+                <Header user={user} profile={profile} login={login} logOut={logOut} />
             </div>
 
             <div className="grow flex-col justify-center items-center ">
