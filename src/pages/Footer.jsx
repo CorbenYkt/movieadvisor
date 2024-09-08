@@ -14,7 +14,7 @@ function Footer() {
           <div className="text-gray-500 font-normal">LinkedIn:&nbsp;<a href="https://www.linkedin.com/in/dmitrii-artemev/" className="text-gray-500 hover:text-gray-100 transition duration-150 ease-in-out">Dmitrii Artemev</a></div>
         </div>
       </div>
-    </footer>
+    </footer >
   );
 }
 

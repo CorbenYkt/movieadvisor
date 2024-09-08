@@ -19,6 +19,7 @@ const MovieItem = ({ movie }) => {
                     &nbsp;
                     {movie.vote_average}</div>
             </div>
+            <div><br></br></div>
             <div className='text-justify text-sm'>{movie.overview}</div>
         </div>
     );

@@ -37,7 +37,7 @@ function Home({ user, profile, logOut, login }) {
 
     return (
         <div className="flex flex-col h-screen" >
-            <div className="h-min" >
+            <div className="flex-none" >
                 <Header user={user} profile={profile} login={login} logOut={logOut} />
             </div>
 
@@ -51,7 +51,7 @@ function Home({ user, profile, logOut, login }) {
                 )}
             </div >
 
-            <div className="">
+            <div className="flex-none">
                 <Footer />
             </div>
         </div >
