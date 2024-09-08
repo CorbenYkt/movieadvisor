@@ -11,6 +11,6 @@ Click to visit https://corbenykt.github.io/movieadvisor
 
 Used stack in this project:
 
-<img src='https://img.shields.io/badge/react-black?logo=react' /><img src='https://img.shields.io/badge/javascript-yellow?logo=javascript' /><img src='https://img.shields.io/badge/TailwindCSS?logo=tailwindcss' /><img src='https://img.shields.io/badge/TMDB?logo=themoviedatabase' />
+<img src='https://img.shields.io/badge/react-black?logo=react' /><img src='https://img.shields.io/badge/javascript-yellow?logo=javascript' /><img src='https://img.shields.io/badge/TailwindCSS-white?logo=tailwindcss' /><img src='https://img.shields.io/badge/TMDB-white?logo=themoviedatabase' />
 
 THNX to themoviedb.org portal for wonderfull API!
