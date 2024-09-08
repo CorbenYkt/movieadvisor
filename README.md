@@ -8,7 +8,10 @@ Take a look at this site, which will give you its recommendations. In the near f
 ![movieadvisor](https://corbenykt.github.io/movieadvisor/Logo.png)
 
 Click to visit https://corbenykt.github.io/movieadvisor
+
 Used stack in this project:
-<img src='https://img.shields.io/badge/logo-react-blue?logo=react' />
-<img src='https://img.shields.io/badge/logo-javascript-blue?logo=javascript' />
+
+<img src='https://img.shields.io/badge/react-black?logo=react' />
+<img src='https://img.shields.io/badge/javascript-yellow?logo=javascript' />
+
 THNX to themoviedb.org portal for wonderfull API!
