@@ -5,7 +5,7 @@ const GerneList = ({ movieid }) => {
     const [genres, setGenres] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
-    
+
     useEffect(() => {
         getDetailInfo();
     }, []);
@@ -18,7 +18,6 @@ const GerneList = ({ movieid }) => {
             }
             const result = await response.json();
             setGenres(result["genres"]);
-            //console.log(result["genres"]);
             setLoading(false);
         } catch (error) {
             setError(error.message);
