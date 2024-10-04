@@ -27,7 +27,8 @@ const GerneList = ({ movieid }) => {
     return (
         <div className='flex flex-row'>
             {loading ? (
-                <Loading />
+                // <Loading />
+                <div>Loading...</div>
             ) : error ? (
                 <p>Error: {error}</p>
             ) : (

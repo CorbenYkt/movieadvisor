@@ -21,7 +21,7 @@ const responsive = {
     }
 };
 
-const MovieList = ({ data }) => {
+const MovieList = ({ data, profile, login }) => {
     function shuffle(array) {
         let currentIndex = array.length;
         while (currentIndex != 0) {
@@ -60,7 +60,7 @@ const MovieList = ({ data }) => {
 
             {data.map((movie) =>
                 <div key={movie.id} >
-                    <MovieItem movie={movie} />
+                    <MovieItem movie={movie} profile={profile} login={login} />
                 </div>
             )}
 

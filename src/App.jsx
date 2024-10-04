@@ -7,19 +7,32 @@ import {
 import Home from './pages/Home';
 import { googleLogout, useGoogleLogin } from '@react-oauth/google';
 import axios from 'axios';
+import Header from './pages/Header';
+import Footer from './pages/Footer';
+import MovieList from './pages/MovieList';
+import Loading from './pages/Loading';
+import Profile from './pages/Profile';
 
 function App() {
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useState(() => {
+    const savedUser = localStorage.getItem('user');
+    return savedUser ? JSON.parse(savedUser) : null;
+  });
   const [profile, setProfile] = useState(null);
 
   const login = useGoogleLogin({
-    onSuccess: (codeResponse) => setUser(codeResponse),
+    onSuccess: (codeResponse) => {
+      setUser(codeResponse);
+      localStorage.setItem('user', JSON.stringify(codeResponse));
+    },
     onError: (error) => console.log('Login Failed:', error)
   });
 
   const logOut = () => {
     googleLogout();
     setProfile(null);
+    setUser(null);
+    localStorage.removeItem('user');
   };
 
   useEffect(
@@ -44,13 +57,24 @@ function App() {
     [user]
   );
 
-
-
   return (
     <>
-      <Routes>
-        <Route exact path="/movieadvisor" element={<Home user={user} profile={profile} login={login} logOut={logOut} />} />
-      </Routes>
+      <div className="flex flex-col h-screen" >
+        <div className="flex-none" >
+          <Header user={user} profile={profile} login={login} logOut={logOut} />
+        </div>
+
+        <Routes>
+          <Route exact path="/movieadvisor" element={<Home user={user} profile={profile} login={login} logOut={logOut} />} />
+          <Route exact path="/movieadvisor/profile" element={<Profile user={user} profile={profile} login={login} logOut={logOut} />} />
+
+        </Routes>
+
+        <div className="flex-none">
+          <Footer />
+        </div>
+      </div >
+
     </>
   )
 }
