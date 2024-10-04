@@ -6,12 +6,12 @@ import {
 } from 'react-router-dom';
 import Home from './pages/Home';
 import { googleLogout, useGoogleLogin } from '@react-oauth/google';
-import axios from 'axios';
 import Header from './pages/Header';
 import Footer from './pages/Footer';
 import MovieList from './pages/MovieList';
 import Loading from './pages/Loading';
 import Profile from './pages/Profile';
+import axios from 'axios';
 
 function App() {
   const [user, setUser] = useState(() => {

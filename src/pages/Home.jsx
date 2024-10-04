@@ -3,7 +3,6 @@ import Header from './Header';
 import Footer from './Footer';
 import MovieList from './MovieList';
 import Loading from './Loading';
-import axios from 'axios';
 import { googleLogout, useGoogleLogin } from '@react-oauth/google';
 
 function Home({ user, profile, logOut, login }) {
