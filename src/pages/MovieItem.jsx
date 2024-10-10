@@ -24,9 +24,8 @@ const MovieItem = ({ movie, profile, login }) => {
 
                     }
                     );
-                    console.log(response);
+                    
                     if (response.data && Object.keys(response.data).length > 0) {
-
                         setSaved(true);
                     } else {
                         setSaved(false);
@@ -54,7 +53,7 @@ const MovieItem = ({ movie, profile, login }) => {
                         userid: userid
                     }
                 });
-                console.log(data);
+                //console.log(data);
                 setSaved(prevState => !prevState);
             } else {
                 const { data } = await axios.post('/likes', { movieid, userid },
@@ -62,7 +61,7 @@ const MovieItem = ({ movie, profile, login }) => {
                     }
                 );
 
-                console.log(data);
+                //console.log(data);
                 setSaved(prevState => !prevState);
             }
         } catch (error) {
