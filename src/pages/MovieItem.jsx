@@ -3,7 +3,7 @@ import GerneList from './GenreList';
 import { CiCalendarDate } from "react-icons/ci";
 import { FaRegStar } from "react-icons/fa";
 import Loading from './Loading';
-import axios from '../axios';
+import axios from '../api';
 
 const MovieItem = ({ movie, profile, login }) => {
     const [saving, setSaving] = useState(false);
@@ -18,18 +18,22 @@ const MovieItem = ({ movie, profile, login }) => {
 
                     const response = await axios.get(`/dolike`, {
                         params: {
-                            "userid": userid,
-                            "movieid": movieid
-                        }
-                    });
+                            movieid: movieid,
+                            userid: userid
+                        },
+
+                    }
+                    );
+                    console.log(response);
                     if (response.data && Object.keys(response.data).length > 0) {
+
                         setSaved(true);
                     } else {
                         setSaved(false);
                     }
 
                 } catch (error) {
-                    console.error('Error checking like status:', error);
+                    console.log('Error checking like status:', error);
                 }
             }
         };
@@ -53,12 +57,16 @@ const MovieItem = ({ movie, profile, login }) => {
                 console.log(data);
                 setSaved(prevState => !prevState);
             } else {
-                const { data } = await axios.post('/likes', { movieid, userid });
+                const { data } = await axios.post('/likes', { movieid, userid },
+                    {
+                    }
+                );
+
                 console.log(data);
                 setSaved(prevState => !prevState);
             }
         } catch (error) {
-            console.error('Error saving like:', error);
+            console.log('Error saving like:', error);
             setSaved(false);
         } finally {
             setSaving(false);
@@ -95,11 +103,8 @@ const MovieItem = ({ movie, profile, login }) => {
                     )}
                 </>
             ) : (
-
                 <button onClick={() => login()} className="bg-blue-500 text-white font-bold h-12 py-2 px-4 rounded">Sign in</button>
-
             )}
-
         </div>
     );
 }; export default MovieItem;
