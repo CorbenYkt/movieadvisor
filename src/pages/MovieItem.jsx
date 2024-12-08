@@ -3,7 +3,7 @@ import GerneList from './GenreList';
 import { CiCalendarDate } from "react-icons/ci";
 import { FaRegStar } from "react-icons/fa";
 import Loading from './Loading';
-import axios from '../api';
+import axios from 'axios';
 
 const MovieItem = ({ movie, profile, login }) => {
     const [saving, setSaving] = useState(false);
@@ -16,7 +16,7 @@ const MovieItem = ({ movie, profile, login }) => {
                     const movieid = movie.id;
                     const userid = profile.email;
 
-                    const response = await axios.get(`/dolike`, {
+                    const response = await axios.get(`https://corbenykt.ru:443/dolike`, {
                         params: {
                             movieid: movieid,
                             userid: userid
@@ -41,13 +41,14 @@ const MovieItem = ({ movie, profile, login }) => {
     }, [movie.id, profile]);
 
     const handleClick = async () => {
+        setSaving(true);
 
         try {
             const movieid = movie.id;
             const userid = profile.email;
 
             if (saved) {
-                const { data } = await axios.delete(`/likes`, {
+                const { data } = await axios.delete(`https://corbenykt.ru:443/likes`, {
                     params: {
                         movieid: movieid,
                         userid: userid
@@ -56,7 +57,7 @@ const MovieItem = ({ movie, profile, login }) => {
                 //console.log(data);
                 setSaved(prevState => !prevState);
             } else {
-                const { data } = await axios.post('/likes', { movieid, userid },
+                const { data } = await axios.post('https://corbenykt.ru:443/likes', { movieid, userid },
                     {
                     }
                 );
