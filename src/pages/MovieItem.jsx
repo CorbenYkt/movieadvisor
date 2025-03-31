@@ -54,15 +54,12 @@ const MovieItem = ({ movie, profile, login }) => {
                         userid: userid
                     }
                 });
-                //console.log(data);
                 setSaved(prevState => !prevState);
             } else {
                 const { data } = await axios.post('https://corbenykt.ru:443/likes', { movieid, userid },
                     {
                     }
                 );
-
-                //console.log(data);
                 setSaved(prevState => !prevState);
             }
         } catch (error) {

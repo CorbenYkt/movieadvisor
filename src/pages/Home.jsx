@@ -36,10 +36,6 @@ function Home({ user, profile, logOut, login }) {
 
     return (
         <div className="flex flex-col h-screen" >
-            {/* <div className="flex-none" >
-                <Header user={user} profile={profile} login={login} logOut={logOut} />
-            </div> */}
-
             <div className="grow flex-col justify-center align-middle items-center h-min">
                 {loading ? (
                     <Loading />
@@ -49,10 +45,6 @@ function Home({ user, profile, logOut, login }) {
                     <MovieList data={data} profile={profile} login={login}></MovieList>
                 )}
             </div >
-
-            {/* <div className="flex-none">
-                <Footer />
-            </div> */}
         </div >
     );
 }

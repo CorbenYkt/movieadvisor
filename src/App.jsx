@@ -50,7 +50,7 @@ function App() {
           })
           .catch((err) => {
             setProfile(null);
-            console.log(err)
+            console.error('Failed to fetch profile:', err);
           });
       }
     },
@@ -60,21 +60,26 @@ function App() {
   return (
     <>
       <div className="flex flex-col h-screen" >
-        <div className="flex-none" >
+        <header className="flex-none" role="banner">
           <Header user={user} profile={profile} login={login} logOut={logOut} />
-        </div>
+        </header>
 
-        <Routes>
-          <Route exact path="/movieadvisor" element={<Home user={user} profile={profile} login={login} logOut={logOut} />} />
-          <Route exact path="/movieadvisor/profile" element={<Profile user={user} profile={profile} login={login} logOut={logOut} />} />
+        <main role="main" className="flex-grow">
+          {profile === null && user ? (
+            <Loading />
+          ) : (
+            <Routes>
+              <Route exact path="/movieadvisor" element={<Home user={user} profile={profile} login={login} logOut={logOut} />} />
+              <Route exact path="/movieadvisor/profile" element={<Profile user={user} profile={profile} login={login} logOut={logOut} />} />
+            </Routes>
+          )}
 
-        </Routes>
+        </main>
 
-        <div className="flex-none">
+        <footer className="flex-none" role="contentinfo">
           <Footer />
-        </div>
+        </footer>
       </div >
-
     </>
   )
 }
