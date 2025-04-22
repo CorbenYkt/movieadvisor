@@ -21,16 +21,11 @@ function App() {
         </header>
 
         <main role="main" className="flex-grow">
-          {profile === null && user ? (
-            <Loading />
-          ) : profile === null && !user ? (
-            <p className="text-center text-red-500">Error loading profile. Try again.</p>
-          ) : (
-            <Routes>
-              <Route exact path="/movieadvisor" element={<Home user={user} profile={profile} login={login} logOut={logOut} />} />
-              <Route exact path="/movieadvisor/profile" element={<Profile user={user} profile={profile} login={login} logOut={logOut} />} />
-            </Routes>
-          )}
+
+          <Routes>
+            <Route exact path="/movieadvisor" element={<Home user={user} profile={profile} login={login} logOut={logOut} />} />
+            <Route exact path="/movieadvisor/profile" element={<Profile user={user} profile={profile} login={login} logOut={logOut} />} />
+          </Routes>
 
         </main>
 

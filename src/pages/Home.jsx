@@ -26,7 +26,7 @@ function Home({ user, profile, logOut, login }) {
             }
             const result = await response.json();
             setData(result["results"]);
-            //console.log(result["results"]);
+            console.log(result["results"]);
             setLoading(false);
         } catch (error) {
             setError(error.message);

@@ -24,7 +24,7 @@ const MovieItem = ({ movie, profile, login }) => {
 
                     }
                     );
-                    
+
                     if (response.data && Object.keys(response.data).length > 0) {
                         setSaved(true);
                     } else {
@@ -86,7 +86,9 @@ const MovieItem = ({ movie, profile, login }) => {
                     {movie.vote_average}</div>
             </div>
             <div><br></br></div>
-            <div className='text-justify text-sm'>{movie.overview}</div>
+            <div className="text-justify text-sm h-24 overflow-hidden text-ellipsis">
+                {movie.overview}
+            </div>
             <br>
             </br>
             {profile ? (
